@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Программа</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="calculations.js"></script>
+	<script type="text/javascript">
+		"use strict";
+		while (true) {
+			try {
+				let first_number = prompt('Введите первое число (для выхода введите "exit"): ');
+				if (first_number == 'exit') break;
+				first_number = +first_number;
+				if (Number.isNaN(first_number)) throw new Error();
+
+				let code = prompt("Введите операцию которую хотите выполнить ('+'' сложение, '-' вычитание, '*' умножение, '/' деление: ");
+				if (code != '+' && code != '-' && code != '*' && code != '/') throw new Error();
+
+
+				let second_number = +prompt('Введите второе число: ');
+				if (Number.isNaN(second_number)) throw new Error();
+
+				if (code == '+') alert(sum(first_number, second_number));
+				else if (code == '-') alert(sub(first_number, second_number));
+				else if (code == '*') alert(mult(first_number, second_number));
+				else if (code == '/') alert(div(first_number, second_number)); 
+			} catch (e) {
+				alert('Некорректный ввод');
+			}
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
